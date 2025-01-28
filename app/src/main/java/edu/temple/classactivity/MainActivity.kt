@@ -8,17 +8,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var clickMeButton: Button
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        clickMeButton = findViewById(R.id.button)
-
-        clickMeButton.setOnClickListener{
-            clickMeButton.text = "Button Clicked"
+        findViewById<Button>(R.id.button)?.run{
+            this.text = "Button Clicked"
         }
     }
 }
